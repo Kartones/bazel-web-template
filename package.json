@@ -1,0 +1,13 @@
+{
+  "name": "bazel-web-template",
+  "private": true,
+  "scripts": {
+    "test": "bazel test //..."
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "typescript": "5.1.6"
+  }
+}
