@@ -13,13 +13,19 @@
 
 ### Setup
 
-Each time dependencies change/get updated, run `pnpm install`.
+Each time dependencies change/get updated, run `pnpm install` (toolchains use `pnpm-lock.yaml`).
 
 #### Requirements
 
-[nodejs](https://nodejs.org)
-[npm](https://www.npmjs.com)
-[pnpm](https://pnpm.io)
+- [nodejs](https://nodejs.org)
+- [npm](https://www.npmjs.com)
+- [pnpm](https://pnpm.io) <- TODO: Change to using rules_js-provided one
+
+#### Recommendations
+
+- [Bazel plugin for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel)
+- [Bazelisk](https://github.com/bazelbuild/bazelisk) instead of [Bazel](https://github.com/bazelbuild/bazel), it will download new versions
+- [buildifier](https://github.com/bazelbuild/buildtools)
 
 ## Testing
 
@@ -29,7 +35,6 @@ Each time dependencies change/get updated, run `pnpm install`.
 
 - ts
 - tests (node)
-- buildifier, VSCode extension,...
 - query examples
 - .bazelrc
 - more js base settings?
