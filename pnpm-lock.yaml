@@ -6,16 +6,16 @@ settings:
 
 devDependencies:
   '@types/node':
-    specifier: 18.17.15
-    version: 18.17.15
+    specifier: 18.17.17
+    version: 18.17.17
   typescript:
     specifier: 5.2.2
     version: 5.2.2
 
 packages:
 
-  /@types/node@18.17.15:
-    resolution: {integrity: sha512-2yrWpBk32tvV/JAd3HNHWuZn/VDN1P+72hWirHnvsvTGSqbANi+kSeuQR9yAHnbvaBvHDsoTdXV0Fe+iRtHLKA==}
+  /@types/node@18.17.17:
+    resolution: {integrity: sha512-cOxcXsQ2sxiwkykdJqvyFS+MLQPLvIdwh5l6gNg8qF6s+C7XSkEWOZjK+XhUZd+mYvHV/180g2cnCcIl4l06Pw==}
     dev: true
 
   /typescript@5.2.2:
