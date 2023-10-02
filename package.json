@@ -7,7 +7,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@types/node": "18.18.1",
+    "@types/node": "18.18.3",
     "typescript": "5.2.2"
   }
 }
