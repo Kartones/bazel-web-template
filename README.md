@@ -15,7 +15,7 @@
 
 Each time dependencies change/get updated, run `pnpm install` (toolchains use `pnpm-lock.yaml`).
 
-#### Requirements
+#### Requirements (for updating & local dev)
 
 - [nodejs](https://nodejs.org)
 - [npm](https://www.npmjs.com)
@@ -24,7 +24,7 @@ Each time dependencies change/get updated, run `pnpm install` (toolchains use `p
 #### Recommendations
 
 - [Bazel plugin for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel)
-- [Bazelisk](https://github.com/bazelbuild/bazelisk) instead of [Bazel](https://github.com/bazelbuild/bazel), it will download new versions
+- [Bazelisk](https://github.com/bazelbuild/bazelisk) instead of directly using [Bazel](https://github.com/bazelbuild/bazel)
 - [buildifier](https://github.com/bazelbuild/buildtools)
 
 ## Testing
