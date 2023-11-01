@@ -1,4 +1,4 @@
-load("//rules/js:defs.bzl", "js_binary", "js_library")
+load("//rules/js:defs.bzl", "js_binary", "js_library", "js_test")
 
 js_library(
     name = "a",
@@ -18,7 +18,15 @@ js_library(
 )
 
 js_binary(
-    name = "run-b",
+    name = "run_b",
     data = [":b"],
     entry_point = ":b",
+)
+
+
+js_test(
+    name = "test_a",
+    data = [":a"],
+    entry_point = "a.test.mjs",
+    size = "small",
 )

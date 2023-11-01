@@ -2,7 +2,7 @@
 
 ## Run
 
-`bazelisk run //src:run-b`
+`bazelisk run //src:run_b`
 
 
 ## Setup

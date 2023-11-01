@@ -1,3 +1,8 @@
 
+# Always output errors when running tests
+test --test_output=errors
+# Warn about tests that are too below their timeout (and can be made smaller)
+test --test_verbose_timeout_warnings
 
-try-import local.bazelrz
+# Local overrides
+try-import local.bazelrc
