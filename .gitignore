@@ -1,5 +1,5 @@
 node_modules
-/.pnp
+.pnp
 .pnp.js
 
 .DS_Store
@@ -13,4 +13,4 @@ yarn-error.log*
 
 *.tsbuildinfo
 
-/bazel-*
+bazel-*

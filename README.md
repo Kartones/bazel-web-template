@@ -11,6 +11,13 @@
 
 `bazelisk build //...`
 
+### Rule wrappers
+
+Most external rules are wrapped at `rules` folder, so they can be modified, refactored or simplified at will.
+
+If an external rule is only used inside other rules/macros and not from `BUILD` files, initially there's no need of wrapping them.
+
+
 ### Setup
 
 Each time dependencies change/get updated, run `pnpm install` (toolchains use `pnpm-lock.yaml`).
@@ -40,4 +47,4 @@ Each time dependencies change/get updated, run `pnpm install` (toolchains use `p
 - more js base settings?
 - linting?
 - `@bazel/ibazel`?
-- some macro example? maybe a thin wrapper over Aspect rules?
+- some macro example
