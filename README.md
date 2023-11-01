@@ -38,13 +38,14 @@ Each time dependencies change/get updated, run `pnpm install` (toolchains use `p
 
 `bazelisk test //...`
 
+Tests are written using only [NodeJS testing capabilities](https://nodejs.org/api/test.html).
+
 ### TODO
 
-- ts
-- tests (node)
+- ts + test (node)
 - query examples
 - .bazelrc
 - more js base settings?
 - linting?
 - `@bazel/ibazel`?
-- some macro example
+- some macro examples
