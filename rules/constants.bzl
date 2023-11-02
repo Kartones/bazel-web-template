@@ -1,0 +1,2 @@
+JAVASCRIPT_TAG = "js"
+TYPESCRIPT_TAG = "ts"

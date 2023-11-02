@@ -1,15 +1,20 @@
 # bazel-web-template
 
+## Setup
+
+- [Bazelisk](https://github.com/bazelbuild/bazelisk), instead of directly using [Bazel](https://github.com/bazelbuild/bazel)
+
 ## Run
 
 `bazelisk run //src:run_b`
 
-
-## Setup
-
 ## Development
 
+To build:
+
 `bazelisk build //...`
+
+Note that `run` and `test` also build/rebuild whatever is needed.
 
 ### Rule wrappers
 
@@ -17,35 +22,61 @@ Most external rules are wrapped at `rules` folder, so they can be modified, refa
 
 If an external rule is only used inside other rules/macros and not from `BUILD` files, initially there's no need of wrapping them.
 
-
 ### Setup
 
 Each time dependencies change/get updated, run `pnpm install` (toolchains use `pnpm-lock.yaml`).
 
-#### Requirements (for updating & local dev)
+#### Development Requirements
 
 - [nodejs](https://nodejs.org)
 - [npm](https://www.npmjs.com)
-- [pnpm](https://pnpm.io) <- TODO: Change to using rules_js-provided one
+- [pnpm](https://pnpm.io)
 
-#### Recommendations
+For `pnpm`, alternatively can use the `rules_js` provisioned one, e.g.:
+
+```bash
+bazelisk run -- @pnpm//:pnpm --dir $PWD list
+```
+
+### Recommendations
 
 - [Bazel plugin for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=BazelBuild.vscode-bazel)
-- [Bazelisk](https://github.com/bazelbuild/bazelisk) instead of directly using [Bazel](https://github.com/bazelbuild/bazel)
 - [buildifier](https://github.com/bazelbuild/buildtools)
+- Add a `.bazelversion` if you wish to control which version to use
 
 ## Testing
 
-`bazelisk test //...`
+Run the [Bazel way](https://bazel.build/reference/test-encyclopedia). Can run all the tests:
+
+```bash
+bazelisk test //...
+```
+
+Or filter by tags:
+
+```bash
+bazelisk test //... --test_tag_filters=js
+```
+
+All [test flags/options](https://bazel.build/reference/command-line-reference#test-options) are valid.
+
+### Writing Tests
 
 Tests are written using only [NodeJS testing capabilities](https://nodejs.org/api/test.html).
 
-### TODO
+## Querying
+
+- List all output files from a label:
+```bash
+bazelisk cquery --output=files //src:a
+```
+
+
+## TODO
 
 - ts + test (node)
-- query examples
+- more query examples
 - .bazelrc
-- more js base settings?
+- more js base settings
 - linting?
 - `@bazel/ibazel`?
-- some macro examples
