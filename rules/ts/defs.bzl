@@ -1,9 +1,13 @@
-load("@aspect_rules_ts//ts:defs.bzl", _ts_config = "ts_config", _ts_project = "ts_project")
-load("//rules:constants.bzl", "TYPESCRIPT_TAG")
+load(
+  "@aspect_rules_ts//ts:defs.bzl",
+  _ts_config = "ts_config",
+  _ts_project = "ts_project"
+)
+load("//rules:constants.bzl", "TAG_TYPESCRIPT")
 
 def ts_config(name, **kwargs):
     tags = kwargs.pop("tags", [])
-    tags.append(TYPESCRIPT_TAG)
+    tags.append(TAG_TYPESCRIPT)
     _ts_config(
       name = name,
       tags = tags,
@@ -12,7 +16,7 @@ def ts_config(name, **kwargs):
 
 def ts_project(name, **kwargs):
     tags = kwargs.pop("tags", [])
-    tags.append(TYPESCRIPT_TAG)
+    tags.append(TAG_TYPESCRIPT)
     _ts_project(
       name = name,
       tags = tags,

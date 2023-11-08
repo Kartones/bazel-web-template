@@ -5,11 +5,11 @@ load(
   _js_run_binary = "js_run_binary",
   _js_test = "js_test"
 )
-load("//rules:constants.bzl", "JAVASCRIPT_TAG")
+load("//rules:constants.bzl", "TAG_JAVASCRIPT")
 
 def js_binary(name, **kwargs):
     tags = kwargs.pop("tags", [])
-    tags.append(JAVASCRIPT_TAG)
+    tags.append(TAG_JAVASCRIPT)
     _js_binary(
       name = name,
       tags = tags,
@@ -18,7 +18,7 @@ def js_binary(name, **kwargs):
 
 def js_library(name, **kwargs):
     tags = kwargs.pop("tags", [])
-    tags.append(JAVASCRIPT_TAG)
+    tags.append(TAG_JAVASCRIPT)
     _js_library(
       name = name,
       tags = tags,
@@ -27,7 +27,7 @@ def js_library(name, **kwargs):
 
 def js_run_binary(name, **kwargs):
     tags = kwargs.pop("tags", [])
-    tags.append(JAVASCRIPT_TAG)
+    tags.append(TAG_JAVASCRIPT)
     _js_run_binary(
       name = name,
       tags = tags,
@@ -36,7 +36,7 @@ def js_run_binary(name, **kwargs):
 
 def js_test(name, **kwargs):
     tags = kwargs.pop("tags", [])
-    tags.append(JAVASCRIPT_TAG)
+    tags.append(TAG_JAVASCRIPT)
     _js_test(
       name = name,
       tags = tags,
