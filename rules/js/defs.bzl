@@ -40,5 +40,6 @@ def js_test(name, **kwargs):
     _js_test(
       name = name,
       tags = tags,
+      testonly = True,
       **kwargs,
     )
