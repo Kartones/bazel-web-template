@@ -15,17 +15,17 @@ http_archive(
 # Must-have for JS
 http_archive(
     name = "aspect_rules_js",
-    sha256 = "295a73d963bad4b04a3c488d60dc8a76a659ee64708be3a66be75726e6277c7e",
-    strip_prefix = "rules_js-1.33.3",
-    url = "https://github.com/aspect-build/rules_js/releases/download/v1.33.3/rules_js-v1.33.3.tar.gz",
+    sha256 = "d9ceb89e97bb5ad53b278148e01a77a3e9100db272ce4ebdcd59889d26b9076e",
+    strip_prefix = "rules_js-1.34.0",
+    url = "https://github.com/aspect-build/rules_js/releases/download/v1.34.0/rules_js-v1.34.0.tar.gz",
 )
 
 # Must-have for TS
 http_archive(
     name = "aspect_rules_ts",
-    sha256 = "0f43d06b02895f825ac18a60901e899d91b22a11d44c4008c8383ada6096a4a9",
-    strip_prefix = "rules_ts-2.0.1",
-    url = "https://github.com/aspect-build/rules_ts/releases/download/v2.0.1/rules_ts-v2.0.1.tar.gz",
+    sha256 = "bd3e7b17e677d2b8ba1bac3862f0f238ab16edb3e43fb0f0b9308649ea58a2ad",
+    strip_prefix = "rules_ts-2.1.0",
+    url = "https://github.com/aspect-build/rules_ts/releases/download/v2.1.0/rules_ts-v2.1.0.tar.gz",
 )
 
 # Common utils
@@ -41,9 +41,9 @@ http_archive(
 # Must-have for building macros & rules
 http_archive(
     name = "aspect_bazel_lib",
-    sha256 = "ce259cbac2e94a6dff01aff9455dcc844c8af141503b02a09c2642695b7b873e",
-    strip_prefix = "bazel-lib-1.37.0",
-    url = "https://github.com/aspect-build/bazel-lib/releases/download/v1.37.0/bazel-lib-v1.37.0.tar.gz",
+    sha256 = "262e3d6693cdc16dd43880785cdae13c64e6a3f63f75b1993c716295093d117f",
+    strip_prefix = "bazel-lib-1.38.1",
+    url = "https://github.com/aspect-build/bazel-lib/releases/download/v1.38.1/bazel-lib-v1.38.1.tar.gz",
 )
 
 # ------------------------
