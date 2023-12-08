@@ -73,8 +73,9 @@ npm_translate_lock(
 load("@npm//:repositories.bzl", "npm_repositories")
 npm_repositories()
 
-load("@aspect_bazel_lib//lib:repositories.bzl", "aspect_bazel_lib_dependencies")
+load("@aspect_bazel_lib//lib:repositories.bzl", "aspect_bazel_lib_dependencies", "aspect_bazel_lib_register_toolchains")
 aspect_bazel_lib_dependencies()
+aspect_bazel_lib_register_toolchains()
 
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 bazel_skylib_workspace()
