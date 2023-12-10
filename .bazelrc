@@ -1,8 +1,35 @@
+# Many of the following come from the great resource https://docs.aspect.build/guides/bazelrc/
+
+# Allow Bazel server to check directory sources for changes
+startup --host_jvm_args=-DBAZEL_TRACK_SOURCE_DIRECTORIES=1
+
+# Propagate tags from a target declaration to the actions' execution requirements
+build --experimental_allow_tags_propagation
+fetch --experimental_allow_tags_propagation
+query --experimental_allow_tags_propagation
+
+# Better hermeticity. Use `tags=["requires-network"]` when required
+build --sandbox_default_allow_network=false
+
+# Reuse directories in sandboxed execution
+build --reuse_sandbox_directories
+
+# Do not automatically create `__init__.py` files in the runfiles of Python targets
+build --incompatible_default_to_explicit_init_py
+
+# Show the output files created by builds that requested more than one target
+build --show_result=20
 
 # Always output errors when running tests
 test --test_output=errors
 # Warn about tests that are too below their timeout (and can be made smaller)
 test --test_verbose_timeout_warnings
+
+# Fix: Allow exclusive tests (`tags=["exclusive"]`) to run in the sandbox
+test --incompatible_exclusive_test_sandboxed
+
+
+
 
 # Local overrides
 try-import local.bazelrc
