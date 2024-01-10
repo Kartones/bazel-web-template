@@ -41,9 +41,9 @@ http_archive(
 # Must-have for building macros & rules
 http_archive(
     name = "aspect_bazel_lib",
-    sha256 = "a9ea6902c860918bd6928114efbc6ea2093df006af66459c9ac1637f9dd08f6a",
-    strip_prefix = "bazel-lib-2.1.2",
-    url = "https://github.com/aspect-build/bazel-lib/releases/download/v2.1.2/bazel-lib-v2.1.2.tar.gz",
+    sha256 = "8d71a578e4e1b6a54aea7598ebfbd8fc9e3be5da881ff9d2b80249577b933a40",
+    strip_prefix = "bazel-lib-2.2.0",
+    url = "https://github.com/aspect-build/bazel-lib/releases/download/v2.2.0/bazel-lib-v2.2.0.tar.gz",
 )
 
 # ------------------------
