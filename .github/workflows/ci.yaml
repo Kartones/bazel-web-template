@@ -22,7 +22,7 @@ jobs:
                 path: |
                     "~/.cache/bazel"
                     "~/.cache/bazel-repo"
-                key: bazel-cache-${{ hashFiles('**/BUILD.bazel', '**/*.bzl', 'WORKSPACE', '**/*.*js', '**/*.*ts') }}
+                key: bazel-cache-${{ hashFiles('**/*.bazel', '**/*.bzl', 'WORKSPACE', '**/*.*js', '**/*.*ts') }}
                 restore-keys: bazel-cache-
           - name: bazel test //...
             env:
