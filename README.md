@@ -30,11 +30,14 @@ If an external rule is only used inside other rules/macros and not from `BUILD` 
 
 Each time dependencies change/get updated, run `pnpm install` (toolchains use `pnpm-lock.yaml`).
 
+**Note**: The NodeJS & Typescript versions you should use are dictated by [rules_js](https://github.com/aspect-build/rules_js) and [rules_ts](https://github.com/aspect-build/rules_ts). You can see more details, and where to check which versions are available, if you inspect the `WORKSPACE` file, I left some comments there.
+
 #### Development Requirements
 
 - [nodejs](https://nodejs.org)
 - [npm](https://www.npmjs.com)
 - [pnpm](https://pnpm.io)
+- [typescript](https://www.typescriptlang.org/)
 
 For `pnpm`, alternatively can use the `rules_js` provisioned one, e.g.:
 
@@ -77,7 +80,8 @@ Tests are written using only [NodeJS testing capabilities](https://nodejs.org/ap
 
 - List all output files from a label:
 ```bash
-bazelisk cquery --output=files //src:a
+bazelisk cquery --output=files //src/js:a
+bazelisk cquery --output=files //src/ts:c
 ```
 
 
