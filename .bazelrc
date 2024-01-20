@@ -28,7 +28,9 @@ test --test_verbose_timeout_warnings
 # Fix: Allow exclusive tests (`tags=["exclusive"]`) to run in the sandbox
 test --incompatible_exclusive_test_sandboxed
 
-
+# Fix: Disable bzlmod lockfile for now, unstable
+# https://github.com/aspect-build/rules_js/pull/1440/files
+common --lockfile_mode=off
 
 
 # Local overrides
