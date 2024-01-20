@@ -51,15 +51,20 @@ http_archive(
 load("@aspect_rules_js//js:repositories.bzl", "rules_js_dependencies")
 rules_js_dependencies()
 
+# https://github.com/aspect-build/rules_ts/blob/main/ts/private/versions.bzl
+# check always latest version *released*
 load("@aspect_rules_ts//ts:repositories.bzl", "rules_ts_dependencies")
 rules_ts_dependencies(ts_version_from = "//:package.json")
 
-# DEFAULT_NODE_VERSION is defined at:
-# https://github.com/bazelbuild/rules_nodejs/blob/00f8569f3c148c35fec2edb73dc3998d2da25db7/nodejs/repositories.bzl#L12-L21
+load("@bazel_features//:deps.bzl", "bazel_features_deps")
+bazel_features_deps()
+
+# https://github.com/bazelbuild/rules_nodejs/blob/main/nodejs/private/node_versions.bzl
+# check always latest version *released*
 load("@rules_nodejs//nodejs:repositories.bzl", "nodejs_register_toolchains")
 nodejs_register_toolchains(
     name = "nodejs",
-    node_version = "20.8.0",
+    node_version = "20.10.0",
 )
 
 load("@aspect_rules_js//npm:npm_import.bzl", "npm_translate_lock")

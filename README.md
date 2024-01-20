@@ -6,7 +6,11 @@
 
 ## Run
 
-`bazelisk run //src:run_b`
+To invoke all example runnable targets:
+
+```bash
+make run
+```
 
 ## Development
 
@@ -52,6 +56,11 @@ Run the [Bazel way](https://bazel.build/reference/test-encyclopedia). Can run al
 bazelisk test //...
 ```
 
+Also created a `make` target:
+```bash
+make test
+```
+
 Or filter by tags:
 
 ```bash
@@ -74,9 +83,6 @@ bazelisk cquery --output=files //src:a
 
 ## TODO
 
-- ts + test (node)
 - more query examples
-- .bazelrc
-- more js base settings
 - linting?
 - `@bazel/ibazel`?

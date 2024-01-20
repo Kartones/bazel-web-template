@@ -32,6 +32,12 @@ test --incompatible_exclusive_test_sandboxed
 # https://github.com/aspect-build/rules_js/pull/1440/files
 common --lockfile_mode=off
 
+# more correct typechecks
+build --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+fetch --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+query --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+
+
 
 # Local overrides
 try-import local.bazelrc

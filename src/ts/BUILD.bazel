@@ -1,0 +1,51 @@
+load("//rules/js:defs.bzl", "js_binary", "js_test")
+load("//rules/ts:defs.bzl", "ts_project")
+
+ts_project(
+    name = "c",
+    srcs = [
+        "c.mts",
+    ],
+    deps = [
+        "//:node_modules/@types/node",
+    ],
+    tsconfig = "//:tsconfig",
+)
+
+ts_project(
+  name = "d",
+  srcs = [
+      "d.mts",
+  ],
+  deps = [
+      ":c",
+      "//:node_modules/@types/node",
+  ],
+  tsconfig = "//:tsconfig",
+)
+
+js_binary(
+    name = "run_d",
+    data = [":d"],
+    entry_point = "d.mjs",
+)
+
+
+ts_project(
+    name = "c_test_lib",
+    srcs = [
+        "c.test.mts",
+    ],
+    deps = [
+        ":c",
+        "//:node_modules/@types/node",
+    ],
+    tsconfig = "//:tsconfig",
+)
+
+js_test(
+    name = "test_c",
+    data = [":c", "c.test.mjs"],
+    entry_point = "c.test.mjs",
+    size = "small",
+)

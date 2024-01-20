@@ -1,5 +1,6 @@
 {
   "name": "bazel-web-template",
+  "type": "module",
   "private": true,
   "scripts": {
     "test": "bazel test //..."
@@ -7,7 +8,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@types/node": "20.11.5",
-    "typescript": "5.3.3"
+    "@types/node": "20.10.0",
+    "typescript": "5.2.2"
   }
 }
