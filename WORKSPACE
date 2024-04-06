@@ -64,7 +64,7 @@ bazel_features_deps()
 load("@rules_nodejs//nodejs:repositories.bzl", "nodejs_register_toolchains")
 nodejs_register_toolchains(
     name = "nodejs",
-    node_version = "20.11.1",
+    node_version = "20.12.1",
 )
 
 load("@aspect_rules_js//npm:npm_import.bzl", "npm_translate_lock")
