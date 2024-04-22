@@ -15,9 +15,9 @@ http_archive(
 # Must-have for JS
 http_archive(
     name = "aspect_rules_js",
-    sha256 = "85fe123d25f91a5cf53d3767da72ed4b490ccfe50f183b1774bde3cf89e04b13",
-    strip_prefix = "rules_js-1.41.1",
-    url = "https://github.com/aspect-build/rules_js/releases/download/v1.41.1/rules_js-v1.41.1.tar.gz",
+    sha256 = "bc9b4a01ef8eb050d8a7a050eedde8ffb1e45a56b0e4094e26f06c17d5fcf1d5",
+    strip_prefix = "rules_js-1.41.2",
+    url = "https://github.com/aspect-build/rules_js/releases/download/v1.41.2/rules_js-v1.41.2.tar.gz",
 )
 
 # Must-have for TS
