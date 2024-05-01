@@ -9,8 +9,8 @@ devDependencies:
     specifier: 20.12.7
     version: 20.12.7
   typescript:
-    specifier: 5.3.3
-    version: 5.3.3
+    specifier: 5.4.5
+    version: 5.4.5
 
 packages:
 
@@ -20,8 +20,8 @@ packages:
       undici-types: 5.26.5
     dev: true
 
-  /typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==, tarball: https://registry.npmjs.org/typescript/-/typescript-5.3.3.tgz}
+  /typescript@5.4.5:
+    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==, tarball: https://registry.npmjs.org/typescript/-/typescript-5.4.5.tgz}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
