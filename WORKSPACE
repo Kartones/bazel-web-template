@@ -51,7 +51,7 @@ http_archive(
 load("@aspect_rules_js//js:repositories.bzl", "rules_js_dependencies")
 rules_js_dependencies()
 
-# https://github.com/aspect-build/rules_ts/blob/main/ts/private/versions.bzl
+# https://github.com/aspect-build/rules_ts/releases/latest -> ts/private/versions.bzl
 # check always latest version *released*
 load("@aspect_rules_ts//ts:repositories.bzl", "rules_ts_dependencies")
 rules_ts_dependencies(ts_version_from = "//:package.json")
@@ -59,7 +59,7 @@ rules_ts_dependencies(ts_version_from = "//:package.json")
 load("@bazel_features//:deps.bzl", "bazel_features_deps")
 bazel_features_deps()
 
-# https://github.com/bazelbuild/rules_nodejs/blob/main/nodejs/private/node_versions.bzl
+# https://github.com/bazelbuild/rules_nodejs/releases/latest -> nodejs/private/node_versions.bzl
 # check always latest version *released*
 load("@rules_nodejs//nodejs:repositories.bzl", "nodejs_register_toolchains")
 nodejs_register_toolchains(

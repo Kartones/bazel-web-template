@@ -23,7 +23,6 @@ js_binary(
     entry_point = ":b",
 )
 
-
 js_test(
     name = "test_a",
     data = [":a"],
