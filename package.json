@@ -8,7 +8,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@types/node": "20.12.8",
+    "@types/node": "20.12.9",
     "typescript": "5.4.5"
   }
 }
