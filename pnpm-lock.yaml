@@ -6,16 +6,16 @@ settings:
 
 devDependencies:
   '@types/node':
-    specifier: 20.12.11
-    version: 20.12.11
+    specifier: 20.12.12
+    version: 20.12.12
   typescript:
     specifier: 5.4.5
     version: 5.4.5
 
 packages:
 
-  /@types/node@20.12.11:
-    resolution: {integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==, tarball: https://registry.npmjs.org/@types/node/-/node-20.12.11.tgz}
+  /@types/node@20.12.12:
+    resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==, tarball: https://registry.npmjs.org/@types/node/-/node-20.12.12.tgz}
     dependencies:
       undici-types: 5.26.5
     dev: true
