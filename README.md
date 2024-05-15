@@ -39,11 +39,15 @@ Each time dependencies change/get updated, run `pnpm install` (toolchains use `p
 - [pnpm](https://pnpm.io)
 - [typescript](https://www.typescriptlang.org/)
 
+Note: `package.json` maximum versions are mandated from the toolchains. Check the [WORKSPACE](WORKSPACE) file for more details.
+
 For `pnpm`, alternatively can use the `rules_js` provisioned one, e.g.:
 
 ```bash
 bazelisk run -- @pnpm//:pnpm --dir $PWD list
 ```
+
+But note that you'll need to instruct it extra configuration (runs from a sandbox).
 
 ### Recommendations
 
