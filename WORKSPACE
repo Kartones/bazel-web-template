@@ -7,25 +7,25 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # Base for JS
 http_archive(
     name = "rules_nodejs",
-    sha256 = "dddd60acc3f2f30359bef502c9d788f67e33814b0ddd99aa27c5a15eb7a41b8c",
-    strip_prefix = "rules_nodejs-6.1.0",
-    url = "https://github.com/bazelbuild/rules_nodejs/releases/download/v6.1.0/rules_nodejs-v6.1.0.tar.gz",
+    sha256 = "3e8369256ad63197959d2253c473a9dcc57c2841d176190e59b91d25d4fe9e67",
+    strip_prefix = "rules_nodejs-6.1.1",
+    url = "https://github.com/bazelbuild/rules_nodejs/releases/download/v6.1.1/rules_nodejs-v6.1.1.tar.gz",
 )
 
 # Must-have for JS
 http_archive(
     name = "aspect_rules_js",
-    sha256 = "7d511ba9c617e593af07fa24984353f71ebd682f51fa0a384525216e2d28c512",
-    strip_prefix = "rules_js-1.42.1",
-    url = "https://github.com/aspect-build/rules_js/releases/download/v1.42.1/rules_js-v1.42.1.tar.gz",
+    sha256 = "2cfb3875e1231cefd3fada6774f2c0c5a99db0070e0e48ea398acbff7c6c765b",
+    strip_prefix = "rules_js-1.42.3",
+    url = "https://github.com/aspect-build/rules_js/releases/download/v1.42.3/rules_js-v1.42.3.tar.gz",
 )
 
 # Must-have for TS
 http_archive(
     name = "aspect_rules_ts",
-    sha256 = "97a8246bf6d1c7077b296e90a6e307bf8eabed02c5bca84d46db81efbf6ead41",
-    strip_prefix = "rules_ts-2.4.0",
-    url = "https://github.com/aspect-build/rules_ts/releases/download/v2.4.0/rules_ts-v2.4.0.tar.gz",
+    sha256 = "da6620683ab2c28014e9c82e8a8fdbb724cd67f6a1d27317f42a8ceb14048b9b",
+    strip_prefix = "rules_ts-2.4.1",
+    url = "https://github.com/aspect-build/rules_ts/releases/download/v2.4.1/rules_ts-v2.4.1.tar.gz",
 )
 
 # Common utils
@@ -68,7 +68,7 @@ bazel_features_deps()
 load("@rules_nodejs//nodejs:repositories.bzl", "nodejs_register_toolchains")
 nodejs_register_toolchains(
     name = "nodejs",
-    node_version = "20.12.1",
+    node_version_from_nvmrc = "//:.nvmrc",
 )
 
 load("@aspect_rules_js//npm:npm_import.bzl", "npm_translate_lock")
@@ -77,6 +77,7 @@ npm_translate_lock(
     pnpm_lock = "//:pnpm-lock.yaml",
     npmrc = "//:.npmrc",
     verify_node_modules_ignored = "//:.bazelignore",
+    pnpm_version = "8.15.3",
 )
 
 load("@npm//:repositories.bzl", "npm_repositories")
