@@ -1,0 +1,76 @@
+# PoC to check if compilation avoidance could be done in Typescript + Bazel
+# See: https://github.com/bazelbuild/rules_kotlin/blob/master/CompileAvoidance.md#compilation-avoidance
+
+load("//rules/js:defs.bzl", "js_binary")
+load("//rules/ts:defs.bzl", "ts_project")
+
+config_setting(
+    name = "test_build",
+    values = {"define": "TEST=true"},
+)
+
+ts_project(
+    name = "int",
+    srcs = [
+        "int.mts",
+    ],
+    tsconfig = "//:tsconfig",
+    deps = [
+        "//:node_modules/@types/node",
+    ],
+)
+
+ts_project(
+    name = "impl",
+    srcs = [
+        "impl.mts",
+    ],
+    tsconfig = "//:tsconfig",
+    deps = [
+        ":int",
+        "//:node_modules/@types/node",
+    ],
+)
+
+ts_project(
+    name = "mock",
+    srcs = [
+        "mock.mts",
+    ],
+    tsconfig = "//:tsconfig",
+    deps = [
+        ":int",
+        "//:node_modules/@types/node",
+    ],
+)
+
+ts_project(
+    name = "main",
+    srcs = [
+        "api.mts",
+    ],
+    tsconfig = "//:tsconfig",
+    deps = [
+        ":int",
+        "//:node_modules/@types/node",
+    ] + select({
+        ":test_build": [
+            ":mock",
+        ],
+        "//conditions:default": [":impl"],
+    }),
+)
+
+# bazelisk run //src/ts/configs:run_main
+# bazelisk run //src/ts/configs:run_main --define=TEST=true
+js_binary(
+    name = "run_main",
+    data = [":main"],
+    entry_point = "api.mjs",
+    env = select({
+        ":test_build": {
+            "NODE_ENV": "testing",
+        },
+        "//conditions:default": {},
+    }),
+)
