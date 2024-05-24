@@ -5,7 +5,17 @@ load(
   _js_run_binary = "js_run_binary",
   _js_test = "js_test"
 )
-load("//rules:constants.bzl", "TAG_JAVASCRIPT")
+load("//rules:constants.bzl", "TAG_JAVASCRIPT", "TAG_TYPESCRIPT")
+
+def js_interface(name, **kwargs):
+    tags = kwargs.pop("tags", [])
+    tags.append(TAG_JAVASCRIPT)
+    tags.append(TAG_TYPESCRIPT)
+    _js_library(
+        name = name,
+        tags = tags,
+        **kwargs
+    )
 
 def js_binary(name, **kwargs):
     tags = kwargs.pop("tags", [])

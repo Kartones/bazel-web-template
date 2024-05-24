@@ -1,0 +1,15 @@
+load("//rules/js:defs.bzl", "js_interface", "js_library")
+
+package(default_visibility = ["//src/ts/interfaces:__subpackages__"])
+
+js_library(
+    name = "greet",
+    srcs = [
+        "greet.mjs",
+    ],
+)
+
+js_interface(
+    name = "greet_interface",
+    srcs = ["greet.d.mts"],
+)
