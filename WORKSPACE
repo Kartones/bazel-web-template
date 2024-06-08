@@ -7,9 +7,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # Base for JS
 http_archive(
     name = "rules_nodejs",
-    sha256 = "b6016a89a12a3d339ece93f2b3988f5e812f452ad497bc963634646ff4aa100b",
-    strip_prefix = "rules_nodejs-6.1.2",
-    url = "https://github.com/bazelbuild/rules_nodejs/releases/download/v6.1.2/rules_nodejs-v6.1.2.tar.gz",
+    sha256 = "0c060a1ee1fb131775064011273b4bcdc5d82a499f199da9f04d700013c2433b",
+    strip_prefix = "rules_nodejs-6.1.3",
+    url = "https://github.com/bazelbuild/rules_nodejs/releases/download/v6.1.3/rules_nodejs-v6.1.3.tar.gz",
 )
 
 # Must-have for JS
