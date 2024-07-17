@@ -44,7 +44,7 @@ Note: `package.json` maximum versions are mandated from the toolchains. Check th
 For `pnpm`, alternatively can use the `rules_js` provisioned one, e.g.:
 
 ```bash
-bazelisk run -- @pnpm//:pnpm --dir $PWD list
+bazelisk run @pnpm//:pnpm -- --dir $PWD outdated
 ```
 
 But note that you'll need to instruct it extra configuration (runs from a sandbox).
