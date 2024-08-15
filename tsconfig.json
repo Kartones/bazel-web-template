@@ -4,7 +4,6 @@
     "moduleResolution": "nodenext",
     "declaration": true,
     "declarationMap": true,
-    // "baseUrl": ".",
     "types": ["node"],
     "incremental": true,
     "removeComments": true,
@@ -15,5 +14,8 @@
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": true
-  }
+  },
+  // Workaround for https://github.com/microsoft/TypeScript/issues/59036
+  //   + info: https://github.com/aspect-build/rules_ts/issues/644
+  "exclude": []
 }
