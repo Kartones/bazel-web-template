@@ -3,6 +3,7 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "declaration": true,
+    "declarationMap": true,
     // "baseUrl": ".",
     "types": ["node"],
     "incremental": true,

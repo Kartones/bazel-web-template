@@ -29,6 +29,7 @@ def ts_project(name, tsconfig, **kwargs):
       resolve_json_module = True,
       incremental = True,
       declaration = True,
+      declaration_map = True,
       allow_js = True,
       **kwargs,
     )
