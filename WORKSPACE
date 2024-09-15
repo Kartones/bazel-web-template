@@ -7,9 +7,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # Dependency for rules_js
 http_archive(
     name = "bazel_features",
-    sha256 = "ba1282c1aa1d1fffdcf994ab32131d7c7551a9bc960fbf05f42d55a1b930cbfb",
-    strip_prefix = "bazel_features-1.15.0",
-    url = "https://github.com/bazel-contrib/bazel_features/releases/download/v1.15.0/bazel_features-v1.15.0.tar.gz",
+    sha256 = "bdc12fcbe6076180d835c9dd5b3685d509966191760a0eb10b276025fcb76158",
+    strip_prefix = "bazel_features-1.17.0",
+    url = "https://github.com/bazel-contrib/bazel_features/releases/download/v1.17.0/bazel_features-v1.17.0.tar.gz",
 )
 
 # Common utils
