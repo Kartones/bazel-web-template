@@ -88,7 +88,7 @@ npm_translate_lock(
     npmrc = "//:.npmrc",
     verify_node_modules_ignored = "//:.bazelignore",
     # Also defined at package.json
-    pnpm_version = "9.7.0",
+    pnpm_version = "9.7.1",
 )
 
 load("@npm//:repositories.bzl", "npm_repositories")

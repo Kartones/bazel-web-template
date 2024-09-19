@@ -6,9 +6,9 @@
     "test": "bazel test //..."
   },
   "engines": {
-    "node": "20.14.0"
+    "node": "20.17.0"
   },
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.7.1",
   "dependencies": {
   },
   "devDependencies": {
