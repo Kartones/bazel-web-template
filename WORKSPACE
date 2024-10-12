@@ -33,9 +33,9 @@ http_archive(
 # Base for JS
 http_archive(
     name = "rules_nodejs",
-    sha256 = "83d2bb029c2a9a06a474c8748d1221a92a7ca02222dcf49a0b567825c4e3f1ce",
-    strip_prefix = "rules_nodejs-6.3.0",
-    url = "https://github.com/bazelbuild/rules_nodejs/releases/download/v6.3.0/rules_nodejs-v6.3.0.tar.gz",
+    sha256 = "0514c6530feb7abf94c9e3aeb4e33c89a21e2e9c9d9ed44cc217393bbf05ca9c",
+    strip_prefix = "rules_nodejs-6.3.1",
+    url = "https://github.com/bazelbuild/rules_nodejs/releases/download/v6.3.1/rules_nodejs-v6.3.1.tar.gz",
 )
 
 # Must-have for JS
