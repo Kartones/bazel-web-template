@@ -81,6 +81,8 @@ nodejs_register_toolchains(
 
 # pnpm version dependant on rules_js
 # https://github.com/aspect-build/rules_js/releases/latest -> npm/private/versions.bzl
+# check always latest version *released*
+# Note: pnpm lockfile v9 not yet supported
 load("@aspect_rules_js//npm:repositories.bzl", "npm_translate_lock")
 npm_translate_lock(
     name = "npm",
@@ -88,7 +90,7 @@ npm_translate_lock(
     npmrc = "//:.npmrc",
     verify_node_modules_ignored = "//:.bazelignore",
     # Also defined at package.json
-    pnpm_version = "9.7.1",
+    pnpm_version = "9.12.1",
 )
 
 load("@npm//:repositories.bzl", "npm_repositories")
