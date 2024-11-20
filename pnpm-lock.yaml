@@ -1,33 +1,41 @@
-lockfileVersion: '6.0'
+lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-onlyBuiltDependencies: []
+importers:
 
-devDependencies:
-  '@types/node':
-    specifier: 22.9.0
-    version: 22.9.0
-  typescript:
-    specifier: 5.6.2
-    version: 5.6.2
+  .:
+    devDependencies:
+      '@types/node':
+        specifier: 22.9.1
+        version: 22.9.1
+      typescript:
+        specifier: 5.6.2
+        version: 5.6.2
 
 packages:
 
-  /@types/node@22.9.0:
-    resolution: {integrity: sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==, tarball: https://registry.npmjs.org/@types/node/-/node-22.9.0.tgz}
-    dependencies:
-      undici-types: 6.19.8
-    dev: true
+  '@types/node@22.9.1':
+    resolution: {integrity: sha512-p8Yy/8sw1caA8CdRIQBG5tiLHmxtQKObCijiAa9Ez+d4+PRffM4054xbju0msf+cvhJpnFEeNjxmVT/0ipktrg==, tarball: https://registry.npmjs.org/@types/node/-/node-22.9.1.tgz}
 
-  /typescript@5.6.2:
+  typescript@5.6.2:
     resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==, tarball: https://registry.npmjs.org/typescript/-/typescript-5.6.2.tgz}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
-  /undici-types@6.19.8:
+  undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==, tarball: https://registry.npmjs.org/undici-types/-/undici-types-6.19.8.tgz}
-    dev: true
+
+onlyBuiltDependencies: []
+
+snapshots:
+
+  '@types/node@22.9.1':
+    dependencies:
+      undici-types: 6.19.8
+
+  typescript@5.6.2: {}
+
+  undici-types@6.19.8: {}
