@@ -1,6 +1,58 @@
-###############################################################################
-# Bazel now uses Bzlmod by default to manage external dependencies.
-# Please consider migrating your external dependencies from WORKSPACE to MODULE.bazel.
-#
-# For more details, please check https://github.com/bazelbuild/bazel/issues/18958
-###############################################################################
+"bazel_web_template"
+
+# https://registry.bazel.build/
+
+# Must-have for building macros & rules
+bazel_dep(name = "aspect_bazel_lib", version = "2.9.4")
+
+# Common utils
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+
+# Base for JS
+bazel_dep(name = "rules_nodejs", version = "6.3.2")
+
+# Must-have for JS
+bazel_dep(name = "aspect_rules_js", version = "2.1.1")
+
+# Must-have for TS
+bazel_dep(name = "aspect_rules_ts", version = "3.3.1")
+
+
+node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node", dev_dependency = True)
+# NodeJS version dependant on rules_nodejs
+# https://github.com/bazelbuild/rules_nodejs/releases/latest -> nodejs/private/node_versions.bzl
+# check always latest version *released*
+node.toolchain(
+    # Also defined at package.json
+    node_version_from_nvmrc = "//:.nvmrc",
+)
+
+
+npm = use_extension("@aspect_rules_js//npm:extensions.bzl", "npm", dev_dependency = True)
+# pnpm version dependant on rules_js
+# https://github.com/aspect-build/rules_js/releases/latest -> npm/private/versions.bzl
+# check always latest version *released*
+# Note: pnpm lockfile v9 not yet supported
+npm.npm_translate_lock(
+    name = "npm",
+    pnpm_lock = "//:pnpm-lock.yaml",
+    npmrc = "//:.npmrc",
+    verify_node_modules_ignored = "//:.bazelignore",
+)
+use_repo(npm, "npm")
+
+
+pnpm = use_extension("@aspect_rules_js//npm:extensions.bzl", "pnpm")
+# Allows developers to use the matching pnpm version, for example:
+# bazel run -- @pnpm --dir /home/runner/work/rules_js/rules_js install
+use_repo(pnpm, "pnpm")
+
+
+rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
+# TypeScript version dependant on rules_ts
+# https://github.com/aspect-build/rules_ts/releases/latest -> ts/private/versions.bzl
+# check always latest version *released*
+rules_ts_ext.deps(
+    ts_version_from = "//:package.json",
+)
+use_repo(rules_ts_ext, "npm_typescript")
