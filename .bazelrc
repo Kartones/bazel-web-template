@@ -4,9 +4,9 @@
 startup --host_jvm_args=-DBAZEL_TRACK_SOURCE_DIRECTORIES=1
 
 # Propagate tags from a target declaration to the actions' execution requirements
-build --experimental_allow_tags_propagation
-fetch --experimental_allow_tags_propagation
-query --experimental_allow_tags_propagation
+build --incompatible_allow_tags_propagation
+fetch --incompatible_allow_tags_propagation
+query --incompatible_allow_tags_propagation
 
 # Better hermeticity. Use `tags=["requires-network"]` when required
 build --sandbox_default_allow_network=false
