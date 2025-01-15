@@ -3,7 +3,7 @@
 # https://registry.bazel.build/
 
 # Must-have for building macros & rules
-bazel_dep(name = "aspect_bazel_lib", version = "2.10.0")
+bazel_dep(name = "aspect_bazel_lib", version = "2.11.0")
 
 # Common utils
 bazel_dep(name = "bazel_skylib", version = "1.7.1")
