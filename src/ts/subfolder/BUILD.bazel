@@ -1,0 +1,13 @@
+load("//rules/ts:defs.bzl", "ts_project")
+
+ts_project(
+    name = "e",
+    srcs = [
+        "e.mts",
+    ],
+    tsconfig = "//:tsconfig",
+    deps = [
+        "//:node_modules/@types/node",
+        "//src/ts:c",
+    ],
+)

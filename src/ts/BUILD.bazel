@@ -1,27 +1,29 @@
 load("//rules/js:defs.bzl", "js_binary", "js_test")
 load("//rules/ts:defs.bzl", "ts_project")
 
+package(default_visibility = ["//src/ts:__subpackages__"])
+
 ts_project(
     name = "c",
     srcs = [
         "c.mts",
     ],
+    tsconfig = "//:tsconfig",
     deps = [
         "//:node_modules/@types/node",
     ],
-    tsconfig = "//:tsconfig",
 )
 
 ts_project(
-  name = "d",
-  srcs = [
-      "d.mts",
-  ],
-  deps = [
-      ":c",
-      "//:node_modules/@types/node",
-  ],
-  tsconfig = "//:tsconfig",
+    name = "d",
+    srcs = [
+        "d.mts",
+    ],
+    tsconfig = "//:tsconfig",
+    deps = [
+        ":c",
+        "//:node_modules/@types/node",
+    ],
 )
 
 js_binary(
@@ -30,22 +32,24 @@ js_binary(
     entry_point = "d.mjs",
 )
 
-
 ts_project(
     name = "c_test_lib",
     srcs = [
         "c.test.mts",
     ],
+    tsconfig = "//:tsconfig",
     deps = [
         ":c",
         "//:node_modules/@types/node",
     ],
-    tsconfig = "//:tsconfig",
 )
 
 js_test(
     name = "test_c",
-    data = [":c", "c.test.mjs"],
-    entry_point = "c.test.mjs",
     size = "small",
+    data = [
+        "c.test.mjs",
+        ":c",
+    ],
+    entry_point = "c.test.mjs",
 )
