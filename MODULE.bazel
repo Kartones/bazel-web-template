@@ -6,7 +6,7 @@
 bazel_dep(name = "aspect_bazel_lib", version = "2.19.4")
 
 # Common utils
-bazel_dep(name = "bazel_skylib", version = "1.8.0")
+bazel_dep(name = "bazel_skylib", version = "1.8.1")
 
 # Base for JS
 bazel_dep(name = "rules_nodejs", version = "6.4.0")
