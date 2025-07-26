@@ -3,6 +3,17 @@
 # Allow Bazel server to check directory sources for changes
 startup --host_jvm_args=-DBAZEL_TRACK_SOURCE_DIRECTORIES=1
 
+# Bzlmod enabled
+common --enable_bzlmod
+
+# Fix: Disable bzlmod lockfile for now, unstable
+# https://github.com/aspect-build/rules_js/pull/1440/files
+common --lockfile_mode=off
+
+# Disable tools_telemetry
+common --repo_env=DO_NOT_TRACK=1
+common --repo_env=ASPECT_TOOLS_TELEMETRY=-all
+
 # Propagate tags from a target declaration to the actions' execution requirements
 build --incompatible_allow_tags_propagation
 fetch --incompatible_allow_tags_propagation
@@ -27,13 +38,6 @@ test --test_verbose_timeout_warnings
 
 # Fix: Allow exclusive tests (`tags=["exclusive"]`) to run in the sandbox
 test --incompatible_exclusive_test_sandboxed
-
-# Bzlmod enabled
-common --enable_bzlmod
-
-# Fix: Disable bzlmod lockfile for now, unstable
-# https://github.com/aspect-build/rules_js/pull/1440/files
-common --lockfile_mode=off
 
 # more correct typechecks
 build --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
