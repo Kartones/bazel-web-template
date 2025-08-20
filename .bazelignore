@@ -1,3 +1,7 @@
 node_modules
-bazel-*
+bazel-bazel_web-template
+bazel-bazel-web-template
+bazel-bin
+bazel-out
+bazel-testlogs
 .git

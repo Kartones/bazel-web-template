@@ -7,7 +7,6 @@ startup --host_jvm_args=-DBAZEL_TRACK_SOURCE_DIRECTORIES=1
 common --enable_bzlmod
 
 # Fix: Disable bzlmod lockfile for now, unstable
-# https://github.com/aspect-build/rules_js/pull/1440/files
 common --lockfile_mode=off
 
 # Disable tools_telemetry
