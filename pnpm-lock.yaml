@@ -9,16 +9,16 @@ importers:
   .:
     devDependencies:
       '@types/node':
-        specifier: 22.18.0
-        version: 22.18.0
+        specifier: 22.18.7
+        version: 22.18.7
       typescript:
         specifier: 5.8.3
         version: 5.8.3
 
 packages:
 
-  '@types/node@22.18.0':
-    resolution: {integrity: sha512-m5ObIqwsUp6BZzyiy4RdZpzWGub9bqLJMvZDD0QMXhxjqMHMENlj+SqF5QxoUwaQNFe+8kz8XM8ZQhqkQPTgMQ==, tarball: https://registry.npmjs.org/@types/node/-/node-22.18.0.tgz}
+  '@types/node@22.18.7':
+    resolution: {integrity: sha512-3E97nlWEVp2V6J7aMkR8eOnw/w0pArPwf/5/W0865f+xzBoGL/ZuHkTAKAGN7cOWNwd+sG+hZOqj+fjzeHS75g==, tarball: https://registry.npmjs.org/@types/node/-/node-22.18.7.tgz}
 
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==, tarball: https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz}
@@ -32,7 +32,7 @@ onlyBuiltDependencies: []
 
 snapshots:
 
-  '@types/node@22.18.0':
+  '@types/node@22.18.7':
     dependencies:
       undici-types: 6.21.0
 
