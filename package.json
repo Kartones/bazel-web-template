@@ -6,13 +6,13 @@
     "test": "bazel test //..."
   },
   "engines": {
-    "node": "22.18.0"
+    "node": "24.9.0"
   },
   "packageManager": "pnpm@10.16.1",
   "dependencies": {
   },
   "devDependencies": {
-    "@types/node": "22.18.0",
+    "@types/node": "24.6.0",
     "typescript": "5.8.3"
   },
   "pnpm": {

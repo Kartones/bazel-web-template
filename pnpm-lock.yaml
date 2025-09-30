@@ -9,33 +9,33 @@ importers:
   .:
     devDependencies:
       '@types/node':
-        specifier: 22.18.0
-        version: 22.18.0
+        specifier: 24.6.0
+        version: 24.6.0
       typescript:
         specifier: 5.8.3
         version: 5.8.3
 
 packages:
 
-  '@types/node@22.18.0':
-    resolution: {integrity: sha512-m5ObIqwsUp6BZzyiy4RdZpzWGub9bqLJMvZDD0QMXhxjqMHMENlj+SqF5QxoUwaQNFe+8kz8XM8ZQhqkQPTgMQ==, tarball: https://registry.npmjs.org/@types/node/-/node-22.18.0.tgz}
+  '@types/node@24.6.0':
+    resolution: {integrity: sha512-F1CBxgqwOMc4GKJ7eY22hWhBVQuMYTtqI8L0FcszYcpYX0fzfDGpez22Xau8Mgm7O9fI+zA/TYIdq3tGWfweBA==, tarball: https://registry.npmjs.org/@types/node/-/node-24.6.0.tgz}
 
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==, tarball: https://registry.npmjs.org/typescript/-/typescript-5.8.3.tgz}
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==, tarball: https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz}
+  undici-types@7.13.0:
+    resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==, tarball: https://registry.npmjs.org/undici-types/-/undici-types-7.13.0.tgz}
 
 onlyBuiltDependencies: []
 
 snapshots:
 
-  '@types/node@22.18.0':
+  '@types/node@24.6.0':
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 7.13.0
 
   typescript@5.8.3: {}
 
-  undici-types@6.21.0: {}
+  undici-types@7.13.0: {}
