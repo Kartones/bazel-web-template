@@ -41,6 +41,8 @@ ts_project(
     deps = [
         ":c",
         "//:node_modules/@types/node",
+        "//:node_modules/chai",
+        "//:node_modules/@types/chai",
     ],
 )
 
@@ -48,8 +50,12 @@ js_test(
     name = "test_c",
     size = "small",
     data = [
-        "c.test.mjs",
+        # We could also use output files from the targets :c_test_lib and :c
+        # "c.test.mjs",
+        # "c.mjs",
+        ":c_test_lib",
         ":c",
+        "//:node_modules/chai",
     ],
     entry_point = "c.test.mjs",
 )

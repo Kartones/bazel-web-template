@@ -1,0 +1,6 @@
+packages:
+  - packages/*
+
+catalog:
+  chai: 6.2.1
+  "@types/chai": 5.2.3
