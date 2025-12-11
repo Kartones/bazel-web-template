@@ -39,7 +39,7 @@ pnpm = use_extension("@aspect_rules_js//npm:extensions.bzl", "pnpm")
 use_repo(pnpm, "pnpm")
 
 # Must-have for TS
-bazel_dep(name = "aspect_rules_ts", version = "3.7.1")
+bazel_dep(name = "aspect_rules_ts", version = "3.8.0")
 rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
 # TypeScript version dependant on rules_ts
 # https://github.com/aspect-build/rules_ts/releases/latest -> ts/private/versions.bzl
