@@ -45,6 +45,7 @@ rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_d
 # https://github.com/aspect-build/rules_ts/releases/latest -> ts/private/versions.bzl
 # check always latest version *released*
 rules_ts_ext.deps(
-    ts_version_from = "//:package.json",
+    # Using the rules_js resolved.json allows rules_ts to support pnpm catalog resolution for the typescript dependency.
+    ts_version_from = "@npm//:typescript/resolved.json",
 )
 use_repo(rules_ts_ext, "npm_typescript")
