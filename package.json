@@ -12,10 +12,10 @@
   "dependencies": {
   },
   "devDependencies": {
+    "@types/chai": "catalog:",
     "@types/node": "catalog:",
-    "typescript": "catalog:",
     "chai": "catalog:",
-    "@types/chai": "catalog:"
+    "typescript": "catalog:"
   },
   "pnpm": {
     "onlyBuiltDependencies": []
