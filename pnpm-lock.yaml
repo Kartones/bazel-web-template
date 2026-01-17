@@ -10,8 +10,8 @@ catalogs:
       specifier: 5.2.3
       version: 5.2.3
     '@types/node':
-      specifier: 24.10.1
-      version: 24.10.1
+      specifier: 24.10.9
+      version: 24.10.9
     chai:
       specifier: 6.2.2
       version: 6.2.2
@@ -28,7 +28,7 @@ importers:
         version: 5.2.3
       '@types/node':
         specifier: 'catalog:'
-        version: 24.10.1
+        version: 24.10.9
       chai:
         specifier: 'catalog:'
         version: 6.2.2
@@ -44,8 +44,8 @@ packages:
   '@types/deep-eql@4.0.2':
     resolution: {integrity: sha512-c9h9dVVMigMPc4bwTvC5dxqtqJZwQPePsWjPlpSOnojbor6pGqdk541lfA7AqFQr5pB1BRdq0juY9db81BwyFw==, tarball: https://registry.npmjs.org/@types/deep-eql/-/deep-eql-4.0.2.tgz}
 
-  '@types/node@24.10.1':
-    resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==, tarball: https://registry.npmjs.org/@types/node/-/node-24.10.1.tgz}
+  '@types/node@24.10.9':
+    resolution: {integrity: sha512-ne4A0IpG3+2ETuREInjPNhUGis1SFjv1d5asp8MzEAGtOZeTeHVDOYqOgqfhvseqg/iXty2hjBf1zAOb7RNiNw==, tarball: https://registry.npmjs.org/@types/node/-/node-24.10.9.tgz}
 
   assertion-error@2.0.1:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==, tarball: https://registry.npmjs.org/assertion-error/-/assertion-error-2.0.1.tgz}
@@ -74,7 +74,7 @@ snapshots:
 
   '@types/deep-eql@4.0.2': {}
 
-  '@types/node@24.10.1':
+  '@types/node@24.10.9':
     dependencies:
       undici-types: 7.16.0
 

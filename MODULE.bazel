@@ -7,10 +7,10 @@ module(
 # https://registry.bazel.build/
 
 # Base for JS
-bazel_dep(name = "rules_nodejs", version = "6.6.2")
+bazel_dep(name = "rules_nodejs", version = "6.7.3")
 
 # Must-have for JS
-bazel_dep(name = "aspect_rules_js", version = "2.8.3")
+bazel_dep(name = "aspect_rules_js", version = "2.9.1")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node", dev_dependency = True)
 # NodeJS version dependant on rules_nodejs
@@ -34,12 +34,16 @@ npm.npm_translate_lock(
 use_repo(npm, "npm")
 
 pnpm = use_extension("@aspect_rules_js//npm:extensions.bzl", "pnpm")
-# Allows developers to use the matching pnpm version, for example:
-# bazel run -- @pnpm --dir /home/runner/work/rules_js/rules_js install
+# Allows to run locally the same pnpm as Bazel would, for example:
+# bazelisk run -- @pnpm --help
 use_repo(pnpm, "pnpm")
+pnpm.pnpm(
+    name = "pnpm",
+    pnpm_version_from = "//:package.json",
+)
 
 # Must-have for TS
-bazel_dep(name = "aspect_rules_ts", version = "3.8.1")
+bazel_dep(name = "aspect_rules_ts", version = "3.8.3")
 rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
 # TypeScript version dependant on rules_ts
 # https://github.com/aspect-build/rules_ts/releases/latest -> ts/private/versions.bzl
