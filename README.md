@@ -2,7 +2,7 @@
 
 ## Setup
 
-- [Bazelisk](https://github.com/bazelbuild/bazelisk), instead of directly using [Bazel](https://github.com/bazelbuild/bazel)
+- [Bazelisk](https://github.com/bazelbuild/bazelisk), instead of directly using [Bazel](https://github.com/bazelbuild/bazel). Note that it adds a symlink from `bazelisk` to `bazel`.
 
 ## Run
 
@@ -16,7 +16,7 @@ make run
 
 To build:
 
-`bazelisk build //...`
+`bazel build //...`
 
 Note that `run` and `test` also build/rebuild whatever is needed.
 
@@ -44,7 +44,7 @@ Note: `package.json` maximum versions are mandated from the toolchains. Check th
 For `pnpm`, alternatively can use the `rules_js` provisioned one, e.g.:
 
 ```bash
-bazelisk run @pnpm//:pnpm -- --dir $PWD outdated
+bazel run @pnpm//:pnpm -- --dir $PWD outdated
 ```
 
 But note that you'll need to instruct it extra configuration (runs from a sandbox).
@@ -60,7 +60,7 @@ But note that you'll need to instruct it extra configuration (runs from a sandbo
 Run the [Bazel way](https://bazel.build/reference/test-encyclopedia). Can run all the tests:
 
 ```bash
-bazelisk test //...
+bazel test //...
 ```
 
 Also created a `make` target:
@@ -71,7 +71,7 @@ make test
 Or filter by tags:
 
 ```bash
-bazelisk test //... --test_tag_filters=js
+bazel test //... --test_tag_filters=js
 ```
 
 All [test flags/options](https://bazel.build/reference/command-line-reference#test-options) are valid.
@@ -84,8 +84,8 @@ Tests are written using only [NodeJS testing capabilities](https://nodejs.org/ap
 
 - List all output files from a label:
 ```bash
-bazelisk cquery --output=files //src/js:a
-bazelisk cquery --output=files //src/ts:c
+bazel cquery --output=files //src/js:a
+bazel cquery --output=files //src/ts:c
 ```
 
 

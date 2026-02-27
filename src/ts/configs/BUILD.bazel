@@ -61,8 +61,8 @@ ts_project(
     }),
 )
 
-# bazelisk run //src/ts/configs:run_main
-# bazelisk run //src/ts/configs:run_main --define=TEST=true
+# bazel run //src/ts/configs:run_main
+# bazel run //src/ts/configs:run_main --define=TEST=true
 js_binary(
     name = "run_main",
     data = [":main"],
