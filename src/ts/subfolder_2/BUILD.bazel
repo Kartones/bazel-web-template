@@ -6,6 +6,7 @@ ts_project(
         "f.mts",
     ],
     tsconfig = "//:tsconfig",
+    isolated_type_declarations = True,
     deps = [
         "//:node_modules/@types/node",
         "//src/ts:c",

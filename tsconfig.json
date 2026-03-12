@@ -12,8 +12,7 @@
     "strictPropertyInitialization": true,
     "sourceMap": true,
     "resolveJsonModule": true,
-    "allowJs": true,
-    "checkJs": true
+    "isolatedDeclarations": true
   },
   // Workaround for https://github.com/microsoft/TypeScript/issues/59036
   //   + info: https://github.com/aspect-build/rules_ts/issues/644

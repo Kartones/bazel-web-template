@@ -15,6 +15,7 @@ ts_project(
         "int.mts",
     ],
     tsconfig = "//:tsconfig",
+    isolated_type_declarations = True,
     deps = [
         "//:node_modules/@types/node",
     ],
@@ -26,6 +27,7 @@ ts_project(
         "impl.mts",
     ],
     tsconfig = "//:tsconfig",
+    isolated_type_declarations = True,
     deps = [
         ":int",
         "//:node_modules/@types/node",
@@ -38,6 +40,7 @@ ts_project(
         "mock.mts",
     ],
     tsconfig = "//:tsconfig",
+    isolated_type_declarations = True,
     deps = [
         ":int",
         "//:node_modules/@types/node",
@@ -50,6 +53,7 @@ ts_project(
         "api.mts",
     ],
     tsconfig = "//:tsconfig",
+    isolated_type_declarations = True,
     deps = [
         ":int",
         "//:node_modules/@types/node",

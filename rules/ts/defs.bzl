@@ -14,14 +14,23 @@ def ts_config(name, **kwargs):
         **kwargs
     )
 
-def ts_project(name, tsconfig, **kwargs):
+def ts_project(name, tsconfig, isolated_type_declarations = False, **kwargs):
     tags = kwargs.pop("tags", [])
     tags.append(TAG_TYPESCRIPT)
+
+    actual_tsconfig = tsconfig
+    actual_extends = None
+    if isolated_type_declarations:
+        actual_tsconfig = {"compilerOptions": {"isolatedDeclarations": True}}
+        actual_extends = tsconfig
+
     _ts_project(
         name = name,
         tags = tags,
-        tsconfig = tsconfig,
+        tsconfig = actual_tsconfig,
+        extends = actual_extends,
         out_dir = ".",
+        isolated_typecheck = isolated_type_declarations,
         # https://docs.aspect.build/rulesets/aspect_rules_ts/docs/transpiler/
         # SWC is faster, but we can live with slower speed and 100% accuracy
         transpiler = "tsc",
@@ -30,6 +39,5 @@ def ts_project(name, tsconfig, **kwargs):
         incremental = True,
         declaration = kwargs.pop("declaration", True),
         declaration_map = kwargs.pop("declaration_map", True),
-        allow_js = True,
         **kwargs
     )
