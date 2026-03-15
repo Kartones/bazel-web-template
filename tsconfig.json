@@ -7,9 +7,8 @@
     "types": ["node"],
     "incremental": true,
     "removeComments": true,
+    "target": "ES2022",
     "strict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
     "sourceMap": true,
     "resolveJsonModule": true,
     "isolatedDeclarations": true

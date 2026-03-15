@@ -2,13 +2,21 @@ import process from "node:process";
 
 import { CarModule } from "./int.mjs";
 
-const USE_MOCK_IMLP = process.env.NODE_ENV === "testing";
+const USE_MOCK_IMPL = process.env.NODE_ENV === "testing";
 
-const dynamicImport = USE_MOCK_IMLP ? "./mock.mjs" : "./impl.mjs";
 // The import must be a string literal to fool TSC, else it will request both paths
-// Note that we also lose typing information, so the interface should also define a module, to ease the type casting
-const { Car } = (await import(dynamicImport)) as CarModule;
+const dynamicImport = USE_MOCK_IMPL ? "./mock.mjs" : "./impl.mjs";
 
-const car = new Car();
-
-car.drive();
+// Note that we also lose typing information, so the interface should also define a module, to ease the type casting.
+// CarModule cast is unverified at compile time.
+try {
+  const { Car } = (await import(dynamicImport)) as CarModule;
+  if (typeof Car !== "function") {
+    throw new Error(`Expected Car to be a constructor, got ${typeof Car}`);
+  }
+  const car = new Car();
+  car.drive();
+} catch (err) {
+  console.error("Failed to load car module:", err);
+  process.exit(1);
+}
