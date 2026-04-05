@@ -6,3 +6,5 @@ catalog:
   "@types/node": 24.10.9
   chai: 6.2.2
   typescript: 5.9.3
+
+minimumReleaseAge: 10080
