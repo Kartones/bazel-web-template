@@ -10,7 +10,7 @@ module(
 bazel_dep(name = "rules_nodejs", version = "6.7.4")
 
 # Must-have for JS
-bazel_dep(name = "aspect_rules_js", version = "3.2.1")
+bazel_dep(name = "aspect_rules_js", version = "3.2.2")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node", dev_dependency = True)
 # NodeJS version dependant on rules_nodejs
@@ -43,7 +43,7 @@ pnpm.pnpm(
 )
 
 # Must-have for TS
-bazel_dep(name = "aspect_rules_ts", version = "3.8.10")
+bazel_dep(name = "aspect_rules_ts", version = "3.8.11")
 rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
 # TypeScript version dependant on rules_ts
 # https://github.com/aspect-build/rules_ts/releases/latest -> ts/private/versions.bzl
