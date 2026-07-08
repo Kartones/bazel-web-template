@@ -9,3 +9,5 @@ catalog:
 
 # TODO: re-enable when minimum time passes and typescript@rc is visible
 # minimumReleaseAge: 10080
+
+allowBuilds: {}
