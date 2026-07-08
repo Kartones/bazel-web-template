@@ -5,7 +5,7 @@ catalog:
   "@types/chai": 5.2.3
   "@types/node": 24.10.9
   chai: 6.2.2
-  typescript: rc
+  typescript: 7.0.2
 
 # TODO: re-enable when minimum time passes and typescript@rc is visible
 # minimumReleaseAge: 10080
