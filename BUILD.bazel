@@ -1,7 +1,26 @@
 load("//rules/ts:defs.bzl", "ts_config")
 load("@npm//:defs.bzl", "npm_link_all_packages")
+load("@bazel_lib//lib:directory_path.bzl", "directory_path")
+load("@aspect_rules_js//js:defs.bzl", "js_binary")
 
 npm_link_all_packages(name = "node_modules")
+
+# TS7 ships the compiler as a native Go binary via optional platform packages.
+# @npm_typescript (used by the default rules_ts tsc) only contains the typescript
+# tarball, so it can't find @typescript/typescript-darwin-arm64 at runtime.
+# //:node_modules/typescript already includes those as transitive deps.
+directory_path(
+    name = "tsc_ts7_entrypoint",
+    directory = "//:node_modules/typescript/dir",
+    path = "bin/tsc",
+)
+
+js_binary(
+    name = "tsc_ts7",
+    data = ["//:node_modules/typescript"],
+    entry_point = ":tsc_ts7_entrypoint",
+    visibility = ["//visibility:public"],
+)
 
 ts_config(
     name = "tsconfig",

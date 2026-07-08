@@ -31,6 +31,9 @@ def ts_project(name, tsconfig, isolated_type_declarations = False, **kwargs):
         extends = actual_extends,
         out_dir = ".",
         isolated_typecheck = isolated_type_declarations,
+        # TS 7.0 RC dropped CJS: the aspect_rules_ts validator does require('typescript') which fails
+        validate = False,
+        tsc = "//:tsc_ts7",
         # https://docs.aspect.build/rulesets/aspect_rules_ts/docs/transpiler/
         # SWC is faster, but we can live with slower speed and 100% accuracy
         transpiler = "tsc",
