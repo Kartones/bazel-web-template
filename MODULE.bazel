@@ -42,10 +42,8 @@ pnpm.pnpm(
     pnpm_version_from = "//:package.json",
 )
 
-bazel_dep(name = "bazel_lib", version = "3.3.1")
-
 # Must-have for TS
-bazel_dep(name = "aspect_rules_ts", version = "3.8.11")
+bazel_dep(name = "aspect_rules_ts", version = "3.9.0")
 rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
 # TypeScript version dependant on rules_ts
 # https://github.com/aspect-build/rules_ts/releases/latest -> ts/private/versions.bzl
