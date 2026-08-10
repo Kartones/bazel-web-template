@@ -10,7 +10,7 @@ module(
 bazel_dep(name = "rules_nodejs", version = "6.7.5")
 
 # Must-have for JS
-bazel_dep(name = "aspect_rules_js", version = "3.3.1")
+bazel_dep(name = "aspect_rules_js", version = "3.4.0")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node", dev_dependency = True)
 # NodeJS version dependant on rules_nodejs
@@ -43,13 +43,13 @@ pnpm.pnpm(
 )
 
 # Must-have for TS
-bazel_dep(name = "aspect_rules_ts", version = "3.9.2")
-rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
+bazel_dep(name = "aspect_rules_ts", version = "3.10.0")
+rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "typescript", dev_dependency = True)
 # TypeScript version dependant on rules_ts
 # https://github.com/aspect-build/rules_ts/releases/latest -> ts/private/versions.bzl
 # check always latest version *released*
 rules_ts_ext.deps(
     # Using the rules_js resolved.json allows rules_ts to support pnpm catalog resolution for the typescript dependency.
-    ts_version_from = "@npm//:typescript/resolved.json",
+    version_from = "@npm//:typescript/resolved.json",
 )
 use_repo(rules_ts_ext, "npm_typescript")

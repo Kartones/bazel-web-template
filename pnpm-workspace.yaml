@@ -7,7 +7,6 @@ catalog:
   chai: 6.2.2
   typescript: 7.0.2
 
-# TODO: re-enable when minimum time passes and typescript@rc is visible
-# minimumReleaseAge: 10080
+minimumReleaseAge: 10080
 
 allowBuilds: {}
