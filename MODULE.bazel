@@ -7,7 +7,7 @@ module(
 # https://registry.bazel.build/
 
 # Base for JS
-bazel_dep(name = "rules_nodejs", version = "6.7.5")
+bazel_dep(name = "rules_nodejs", version = "6.7.7")
 
 # Must-have for JS
 bazel_dep(name = "aspect_rules_js", version = "3.5.1")
